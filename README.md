@@ -2,8 +2,15 @@
 
 ## Supertest
 
-[Testing HTTP APIs with SuperTest](https://www.cloudbees.com/blog/testing-http-apis-supertest)  
 
+[supertest](https://www.npmjs.com/package/supertest)  
+[chai-http](https://www.npmjs.com/package/chai-http)  
+  
+  
+[Testing HTTP APIs with SuperTest](https://www.cloudbees.com/blog/testing-http-apis-supertest)  
+[chai-http](https://www.chaijs.com/plugins/chai-http/)  
+
+[Komponent Testning med supertest](https://www.youtube.com/watch?v=r5L1XRZaCR0&t=449s)  
 
 ## Instruktioner
 

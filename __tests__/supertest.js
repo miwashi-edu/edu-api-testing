@@ -1,5 +1,7 @@
 const request = require("supertest")
 
+const HOST = process.env.HOST || "https://petstore.swagger.io"
+
 afterAll(async () => { 
 	await new Promise(resolve => setTimeout(() => resolve(), 500)); // avoid jest open handle error
 });
@@ -29,28 +31,29 @@ describe('When testing jest', () => {
 describe("Testing petshop", () => {
 	describe('given a broken url', () => {
 		it('should return status 404', () => {
-			const container = request("https://petstore.swagger.io")
+			const container = request(HOST)
 			container.get('/whatever')
 				.expect(404)
 		})
 	})
 })
 
-describe("Testing petshop", () => {
+describe("Testing petshop with supertest", () => {
 	describe('given GET /', () => {
 		it('should return status 200', () => {
-			container = request("https://petstore.swagger.io")
+			container = request(HOST)
 			container.get('/')
 				.expect('Allow', /GET/)
-				.expect(200);
+				.expect(200)
+				.expect('Content-Type', 'text/html')
 		})
 	})
 })
 
-describe("Testing petshop", () => {
+describe("Testing petshop with supertest", () => {
 	describe('given POST /v2/pet', () => {
 		it('should return status 200', () => {
-			container = request("https://petstore.swagger.io")
+			container = request(HOST)
 			container.post('/v2/pet')
 				.expect('Allow', /POST/)
 				.expect(200);
@@ -60,7 +63,6 @@ describe("Testing petshop", () => {
 
 const pet = {
 	"category": {
-	  "id": 0,
 	  "name": "string"
 	},
 	"name": "doggie",
@@ -76,10 +78,10 @@ const pet = {
 	"status": "available"
 }
 
-describe("Testing petshop", () => {
+describe("Testing petshop with supertest", () => {
 	describe('given POST /v2/pet', () => {
 		it('should add pet', () => {
-		container = request("https://petstore.swagger.io")
+		container = request(HOST)
 		container
 			.post('/v2/pet')
 			.send(pet)
