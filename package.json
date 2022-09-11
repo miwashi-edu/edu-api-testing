@@ -1,0 +1,27 @@
+{
+  "name": "edu-api-testing",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "jest",
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/miwashiab/edu-api-testing.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/miwashiab/edu-api-testing/issues"
+  },
+  "homepage": "https://github.com/miwashiab/edu-api-testing#readme",
+  "dependencies": {
+    "chai": "^4.3.6",
+    "chai-http": "^4.3.0",
+    "jest": "^29.0.3",
+    "supertest": "^6.2.4"
+  }
+}
