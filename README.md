@@ -1,5 +1,10 @@
 # edu-api-testing
 
+## Supertest
+
+[Testing HTTP APIs with SuperTest](https://www.cloudbees.com/blog/testing-http-apis-supertest)  
+
+
 ## Instruktioner
 
 ```bash
@@ -16,6 +21,9 @@ touch ./__tests__/supertest.js
 touch ./__tests__/chai-http.js
 git init
 touch .gitignore
+git add .
+git commit -m "initial commit"
+code .
 ```
 
 ## package.json
@@ -61,6 +69,10 @@ node_modules/
 
 ```js
 const request = require("supertest")
+
+afterAll(async () => { 
+	await new Promise(resolve => setTimeout(() => resolve(), 500)); // avoid jest open handle error
+});
 
 describe('When testing jest', () => {
 	describe('given i have a non failing test', () => {
