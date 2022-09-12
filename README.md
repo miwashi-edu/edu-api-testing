@@ -21,6 +21,7 @@ mkdir edu-api-testing
 cd edu-api-testing
 npm init -y
 npm install jest
+npm install chai
 npm install chai-http
 npm install supertest
 mkdir __tests__
