@@ -27,7 +27,12 @@ mkdir __tests__
 touch ./__tests__/supertest.js
 touch ./__tests__/chai-http.js
 git init
-touch .gitignore
+echo "node_modules" > .gitignore
+echo "logs" >> .gitignore
+echo "*.log" >> .gitignore
+echo "node_modules/" >> .gitignore
+echo ".env" >> .gitignore
+echo ".env.test" >> .gitignore
 git add .
 git commit -m "initial commit"
 code .
